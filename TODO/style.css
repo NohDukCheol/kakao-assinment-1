@@ -1,0 +1,237 @@
+/* 기본 초기화 및 폰트 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+body {
+    background-color: #f5f6f8;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    height: 100vh;
+}
+
+/* 앱 메인 컨테이너 */
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 타이틀 스타일 */
+.app-title {
+    text-align: center;
+    color: #672be0;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* === 주간 캘린더 스타일 === */
+.weekly-navigator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f6ff;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #672be0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.nav-btn:hover {
+    transform: scale(1.2);
+}
+
+#current-week-display {
+    font-size: 15px;
+    color: #672be0;
+    font-weight: bold;
+}
+
+.weekly-calendar {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+/* 요일별 카드 디자인 */
+.day-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.day-card:hover {
+    background-color: #e8e8e8;
+}
+
+/* 선택된 날짜 강조 */
+.day-card.selected {
+    background-color: #ffffff;
+    border-color: #672be0;
+    box-shadow: 0 2px 8px rgba(103, 43, 224, 0.15);
+}
+
+/* 오늘 날짜 텍스트 색상 변경 */
+.day-card.today .day-name,
+.day-card.today .day-num {
+    color: #672be0;
+    font-weight: 800;
+}
+
+.day-name {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.day-num {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.todo-count {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+}
+/* ======================== */
+
+/* 입력창 컨테이너 */
+.input-container {
+    display: flex;
+    gap: 10px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#todo-input:focus {
+    border-color: #672be0;
+}
+
+/* 추가 버튼 */
+#add-btn {
+    background-color: #672be0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#add-btn:hover {
+    background-color: #551cc4;
+}
+
+/* 필터 탭 스타일 */
+.filter-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-btn {
+    flex: 1;
+    padding: 10px;
+    background-color: #f0f0f0;
+    color: #888;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn.active {
+    background-color: #672be0;
+    color: white;
+}
+
+/* Todo 목록 컨테이너 */
+.todo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 350px; /* 리스트가 길어지면 스크롤 생성 */
+}
+
+/* 개별 Todo 아이템 */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.todo-text {
+    font-size: 15px;
+    color: #333;
+    flex: 1;
+    word-break: break-all;
+    margin-right: 15px;
+}
+
+.todo-text.completed {
+    text-decoration: line-through;
+    color: #a0a0a0;
+}
+
+/* 버튼 그룹 컨테이너 */
+.button-group {
+    display: flex;
+    gap: 6px;
+}
+
+.action-btn {
+    background-color: #672be0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+    background-color: #551cc4;
+}
