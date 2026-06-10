@@ -1,16 +1,21 @@
-# React + Vite
+# React Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 프로젝트 소개
 
-Currently, two official plugins are available:
+JavaScript Todo 앱을 React로 마이그레이션한 프로젝트입니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 구현 기능
 
-## React Compiler
+- Todo 생성(Create)
+- Todo 조회(Read)
+- Todo 수정(Update)
+- Todo 삭제(Delete)
+- 상태별 필터링
+- 날짜별 일간 뷰
+- localStorage 저장 및 복원
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## 실행 방법
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+npm install
+npm run dev
